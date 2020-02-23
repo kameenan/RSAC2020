@@ -11,8 +11,9 @@ There are two scripts here:
 
 This is proof of concept code intended to illustrate techniques that you could use in your own organization. It makes several assumptions about the environment it's running in, but could be easily adapted to other AWS account arrangements.
 
-1. We assume that you're working within an [AWS Organization](https://aws.amazon.com/organizations/), that your default AWS credentials are in your organization's Master account, and that you have attached an MFA device to the account that owns your credentials. Establishing and configuring an AWS Organization is outside the scope of this talk. 
+1. We assume that you're working within an [AWS Organization](https://aws.amazon.com/organizations/), that your default AWS credentials are in your organization's Master account, and that you have attached an MFA device to the account that owns your credentials. Establishing and configuring an AWS Organization is outside the scope of this talk.
 2. You have configured **assumerole** as described in [the README](https://github.com/rik2803/aws-sts-assumerole/blob/master/README.md). **assumerole** requires that your credentials have MFA enabled. It's a good idea anyway!
+3. You have enabled [CloudTrail](https://aws.amazon.com/cloudtrail/) logging in all regions in all your accounts. You've already done this [already, right?](https://docs.aws.amazon.com/organizations/latest/userguide/services-that-can-integrate-ct.html)
 
 ## Usage
 **investigateAndDisableKey.sh** takes one command line argument: the AWS Access Key ID that you wish to audit and disable.
